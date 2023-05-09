@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('nav'); %>
+</header>
+
+<main>
+  <div class="jumbotron">
+    <h1>Template EJS</h1>
+    <p>Site basique avec chat integré</p>
+
+    <h2>Mes mascottes que j'ai fait passer deuis le serveur</h2>
+    <p><%= tagline %></p>
+    <ul>
+      <% mascots.forEach(function(mascot) { %>
+        <li>
+          <strong><%= mascot.name %></strong>
+          representing <%= mascot.organization %>,
+          born <%= mascot.birth_year %>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <%- include('footer'); %>
+</footer>
+
+</body>
+</html>
